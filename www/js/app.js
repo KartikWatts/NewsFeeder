@@ -14,6 +14,19 @@ app.controller('newsController', function($scope, $http){
     console.log(newsData);
     $scope.news=newsData.data.articles;
   })
+  
+  $scope.doRefresh = function() {
+    $scope.news=[];
+    $http({
+      method: "GET",
+      url: "https://newsapi.org/v2/everything?sources=the-hindu&apiKey=9ceb006bc5784bc58ab0330809eb0d86"
+    }).then(function(newsData){
+      console.log(newsData);
+      $scope.news=newsData.data.articles;
+    })
+       // Stop the ion-refresher from spinning
+       $scope.$broadcast('scroll.refreshComplete');
+  };
 });
 
 
