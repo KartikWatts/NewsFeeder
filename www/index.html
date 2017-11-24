@@ -36,11 +36,23 @@
 
     <ion-pane>
       <ion-header-bar class="bar-positive">
-        <h1 class="title">KK's News Reader from the Hindu</h1>
+        <h1 class="title">KK's News Reader from The Hindu</h1>
       </ion-header-bar>
       <ion-content>
         <section class="list">
-          <article class="item" ng-repeat="articles in news">{{articles}}</article>
+          <article class="item" ng-repeat="articles in news">
+            <div class="padding text-center">
+              <img ng-src="{{articles.urlToImage}}" alt="Image" style="height:250px; max-width:100%;">
+            </div>
+            <div class="text-center">
+              <h2 style="white-space: normal; font-size: 25px;">{{articles.title}}</h2>
+              <p style="white-space: normal; text-align:left">
+                <b>{{articles.publishedAt}}-</b>&nbsp;&nbsp; 
+                {{articles.description}}
+              </p>
+              <p><a href="{{articles.url}}">Ram Ram..Follow the Complete News</a></p>
+            </div>
+            </article>
           
         </section>
       </ion-content>
