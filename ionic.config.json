@@ -1,7 +1,9 @@
 {
-  "name": "IonicCounter",
+  "name": "News Reader",
   "app_id": "",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic1",
   "watchPatterns": [
     "scss/**/*",
